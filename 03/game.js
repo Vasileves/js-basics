@@ -8,11 +8,12 @@ function randomInteger(min, max) {
 let location1 = randomInteger(0,9)
 let location2 = randomInteger(0,9)
 let location3 = randomInteger(0,9)
-//Кол-во выстрелов
+// Кол-во выстрелов
 let currentShot = 0
 let shots = 0
 let hits = 0
 let isSunk = false
+// переменные, проверяющие попадание в три части корабля
 let hit1 = false
 let hit2 = false
 let hit3 = false
@@ -28,29 +29,40 @@ while (isSunk === false) {
   // Проверяем, попал или не попал
 
   if (currentShot === location1) {
+    if (hit1 = false) {
+      // если в первую часть ещё не стреляли
     hit1 = true
+    // засчитываем попадание
     alert('В ячейке ' + currentShot + ' оказалась часть корабля!')
+  }
+  else {
+    // если уже стреляли (хи1 = тру), то ругаемся
+    alert('Зачем ты стреляешь в обломки?')
+  }
   }
 
   if (currentShot === location2) {
+    if (hit2 = false) {
     hit2 = true
     alert('В ячейке ' + currentShot + ' оказалась часть корабля!')
   }
-
-  if (currentShot === location3) {
-    hit3 = true
-    alert('В ячейке ' + currentShot + ' оказалась часть корабля!')
+  else {
+    alert('Зачем ты стреляешь в обломки?')
+  }
   }
 
   if (currentShot < 0 || currentShot > 9) {
-    alert('Введённое число !')
+    if (hit3 = false) {
+    hit3 = true
+    alert('В ячейке ' + currentShot + ' оказалась часть корабля!')
+  }
+  else {
+    alert('Зачем ты стреляешь в обломки?')
   }
 
-  if (hit1 === true && hit2 === true && hit3 === true) {
-    isSunk = true
-    alert("Корабль сбит, вы победили!")
-  }
-  // Если попал, то увеличиваем счётчик попаданий
-
-  // Если попал три раза, то топим корабль и поздравляем игрока с победой
+  // Если все три ячейки сбиты, то топим корабль и поздравляем игрока с победой
+if (hit1 === true && hit2 === true && hit3 === true) {
+  isSunk = true;
+  alert('Корабль уничтожен!')
+}
 }
