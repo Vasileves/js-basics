@@ -1,0 +1,15 @@
+section {
+  position: relative;
+  padding-bottom: 80vh;
+}
+
+section:nth-of-type(even) {
+  background-color: #ccc;
+}
+
+.box {
+  position: absolute;
+  height: 10vh;
+  width: 10vw;
+  background-color: green;
+}
